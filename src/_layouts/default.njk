@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <meta name="description" content="{{ page.filePathStem }}"/>
+    <link rel="stylesheet" href="/css/main.css">
   </head>
 
   <body>
     {% include "header.njk" %}
 
     <hr>
+
+    <button>Lorem ipsum dolor sit amet.</button>
 
     <main>
       {{ content | safe }}

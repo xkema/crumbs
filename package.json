@@ -14,6 +14,13 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-navigation": "^0.3.5",
-    "@11ty/eleventy-plugin-directory-output": "^1.0.1"
+    "@11ty/eleventy-plugin-directory-output": "^1.0.1",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "postcss-fail-on-warn": "^0.2.1",
+    "postcss-import": "^15.1.0",
+    "postcss-load-config": "^4.0.1",
+    "postcss-nesting": "^11.2.1",
+    "the-new-css-reset": "^1.8.4"
   }
 }

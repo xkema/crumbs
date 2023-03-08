@@ -4,6 +4,11 @@ const directoryOutputPlugin = require('@11ty/eleventy-plugin-directory-output');
 const { EleventyI18nPlugin } = require('@11ty/eleventy');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
+const path = require('path');
+
+const postcss = require('postcss');
+const postcssrc = require('postcss-load-config');
+
 module.exports = function (eleventyConfig) {
 
   /* plugin: "@11ty/eleventy-plugin-directory-output" */
@@ -15,6 +20,31 @@ module.exports = function (eleventyConfig) {
 
   /* plugin: "@11ty/eleventy-navigation" */
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
+  /* add support for PostCSS */
+  eleventyConfig.addTemplateFormats('css');
+  eleventyConfig.addExtension('css', {
+    outputFileExtension: 'css',
+    compileOptions: {
+      permalink: function (contents, inputPath) {
+        const pathDetails = path.parse(inputPath);
+        if (!pathDetails.name.startsWith('_')) {
+          return (data) => `/css/${data.page.fileSlug}.css`;
+        }
+      },
+      cache: false,
+    },
+    compile: async function (inputContent, inputPath) {
+      const pathDetails = path.parse(inputPath);
+      if (pathDetails.name.startsWith('_')) {
+        return;
+      }
+      const postCCSSConfig = await postcssrc();
+      const result = await postcss(postCCSSConfig.plugins).process(inputContent, { ...postCCSSConfig.options, from: inputPath });
+      result.warnings().forEach(warn => (console.warn(warn.toString())));
+      return async (data) => result.css;
+    },
+  });
 
   /* configuration */
   return {

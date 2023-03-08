@@ -1,0 +1,15 @@
+/* 
+  Crumbs Base Styles
+*/
+
+body {
+  background-color: aliceblue;
+
+  & a {
+    color: brown;
+  }
+}
+
+button {
+  background-color: antiquewhite;
+}

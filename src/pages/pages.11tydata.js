@@ -20,4 +20,5 @@ module.exports = {
       return false;
     }
   },
+  layout: 'default.njk',
 };
