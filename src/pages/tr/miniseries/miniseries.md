@@ -4,7 +4,8 @@ title: turkce miniseriler sayfasi
 eleventyComputed:
   eleventyNavigation:
     key: Miniseriler
-    parent: nav/content/{{page.lang}}
+    parent: nav/pages/{{page.lang}}
+    order: 3
 ---
 
 Miniseriler

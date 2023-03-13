@@ -1,3 +1,12 @@
+{% set navToHtmlOptions = {
+  activeKey: eleventyNavigation.key,
+  listClass: 'menu-list',
+  listItemClass: 'menu-item',
+  anchorClass: 'menu-anchor',
+  activeAnchorClass: 'menu-anchor-active'
+} %}
+
 <header>
-  {{ collections.all | eleventyNavigation('nav/pages/' + page.lang) | eleventyNavigationToHtml | safe }}
+  <a class="menu-logo" href="{{ "/" | locale_url }}">Crumbs</a>  
+  {{ collections.all | eleventyNavigation('nav/pages/' + page.lang) | eleventyNavigationToHtml( navToHtmlOptions ) | safe }}
 </header>
