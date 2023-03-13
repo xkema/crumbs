@@ -6,7 +6,9 @@
   activeAnchorClass: 'menu-anchor-active'
 } %}
 
-<header>
-  <a class="menu-logo" href="{{ "/" | locale_url }}">Crumbs</a>  
-  {{ collections.all | eleventyNavigation('nav/pages/' + page.lang) | eleventyNavigationToHtml( navToHtmlOptions ) | safe }}
+<header class="site-header">
+  <div class="container">
+    <a class="menu-logo" href="{{ "/" | locale_url }}">Crumbs</a>
+    {{ collections.all | eleventyNavigation('nav/pages/' + page.lang) | eleventyNavigationToHtml( navToHtmlOptions ) | safe }}
+  </div>
 </header>

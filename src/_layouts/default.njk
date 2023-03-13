@@ -11,15 +11,11 @@
   <body>
     {% include "header.njk" %}
 
-    <hr>
-
-    <button>Lorem ipsum dolor sit amet.</button>
-
-    <main>
-      {{ content | safe }}
+    <main class="site-content">
+      <div class="container">
+        {{ content | safe }}
+      </div>
     </main>
-
-    <hr>
       
     {% include "footer.njk" %}
   </body>
