@@ -9,6 +9,8 @@ const path = require('path');
 const postcss = require('postcss');
 const postcssrc = require('postcss-load-config');
 
+const lucideIcons = require('@grimlink/eleventy-plugin-lucide-icons');
+
 module.exports = function (eleventyConfig) {
 
   /* plugin: "@11ty/eleventy-plugin-directory-output" */
@@ -20,6 +22,9 @@ module.exports = function (eleventyConfig) {
 
   /* plugin: "@11ty/eleventy-navigation" */
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  
+  /* plugin: "@grimlink/eleventy-plugin-lucide-icons" */
+  eleventyConfig.addPlugin(lucideIcons, {});
 
   /* add support for PostCSS */
   eleventyConfig.addTemplateFormats('css');
