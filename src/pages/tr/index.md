@@ -1,9 +1,11 @@
 ---
 layout: home.njk
-title: index turkce
+title: Crumbs'a hoş geldin!
 eleventyComputed:
   eleventyNavigation:
     key: nav/pages/{{page.lang}}
 ---
 
-Anasayfa
+**Crumbs'a hoş geldin!**
+
+Proje, farklı içeriklere dair notların tutulduğu bir koleksiyon. Aynı zamanda Eleventy'nin (Static Site Generator) i18n yeteneklerini anlamak için bir ön çalışma!
