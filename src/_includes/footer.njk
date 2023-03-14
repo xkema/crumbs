@@ -1,7 +1,7 @@
 <footer class="site-footer">
   <div class="container">
     {% if not page.url | locale_links | length  < 1 %}
-    Also available in:
+    {{"also_available_in" | i18n}}:
     {% endif %}
     {% for link in page.url | locale_links %}
       {%- if not loop.first %},{% endif %}

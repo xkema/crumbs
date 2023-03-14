@@ -15,6 +15,6 @@ layout: default.njk
       {% endif %}
     </li>
   {%- else -%}
-    <li>No items found!</li>
+    <li>{{"no_items" | i18n}}</li>
   {%- endfor -%}
 </ul>

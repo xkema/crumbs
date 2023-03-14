@@ -11,6 +11,9 @@ const postcssrc = require('postcss-load-config');
 
 const lucideIcons = require('@grimlink/eleventy-plugin-lucide-icons');
 
+const i18n = require('eleventy-plugin-i18n');
+const translations = require('./src/assets/i18n/translations.js');
+
 module.exports = function (eleventyConfig) {
 
   /* plugin: "@11ty/eleventy-plugin-directory-output" */
@@ -19,6 +22,14 @@ module.exports = function (eleventyConfig) {
 
   /* plugin: "EleventyI18nPlugin" */
   eleventyConfig.addPlugin(EleventyI18nPlugin, { defaultLanguage: 'en' });
+
+  /* plugin: "eleventy-plugin-i18n" */
+  eleventyConfig.addPlugin(i18n, {
+    translations,
+    fallbackLocales: {
+      '*': 'en'
+    },
+  });
 
   /* plugin: "@11ty/eleventy-navigation" */
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
