@@ -1,0 +1,9 @@
+---
+layout: default.njk
+---
+
+<section>
+  {{ collections.all | eleventyNavigation('nav/content/' + page.lang) | eleventyNavigationToHtml | safe }}
+</section>
+
+{{ content | safe }}

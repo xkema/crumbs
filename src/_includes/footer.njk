@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="container">
+    {% if not page.url | locale_links | length  < 1 %}
+    Also available in:
+    {% endif %}
+    {% for link in page.url | locale_links %}
+      {%- if not loop.first %},{% endif %}
+      <a href="{{ link.url }}" lang="{{ link.lang }}" hreflang="{{ link.lang }}">{{ link.label }}</a>
+    {%- endfor %}
+  </div>
+</footer>

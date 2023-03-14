@@ -1,0 +1,20 @@
+---
+layout: default.njk
+---
+
+{{ content | safe }}
+
+<ul>
+  {%- for item in collections['content:' + page.fileSlug + ':' + page.lang] -%}
+    <li>
+      <div>
+        {{ item.data.content | safe }}
+      </div>
+      {% if item.page.url !== false %}
+        <a href="{{ item.page.url }}">{{ item.page.url }}</a>
+      {% endif %}
+    </li>
+  {%- else -%}
+    <li>No items found!</li>
+  {%- endfor -%}
+</ul>
