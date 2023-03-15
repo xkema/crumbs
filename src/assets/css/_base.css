@@ -114,3 +114,43 @@ strong {
   0% { transform: translateX(-1rem); }
   100% { transform: translateX(0); }
 }
+
+/* listing page cards */
+
+.post-cards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: max(1rem, 16px);
+}
+.post-cards-list-item {
+  border-radius: max(0.5rem, 8px);
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+.post-card {
+  background-color: white;
+  background-image: linear-gradient(to bottom right, whitesmoke, white);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.post-card-image {}
+.post-card-content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: max(1rem, 16px);
+}
+.post-card-title {
+  font-size: x-large;
+  font-family: var(--font-family-heading);
+  margin-bottom: max(1rem, 16px);
+}
+.post-card-body {}
+.post-card-link {
+  margin-top: auto;
+  background-color: rebeccapurple;
+  color: lavender;
+  padding: max(1rem, 16px);
+  border-radius: max(0.25rem, 4px);
+}

@@ -4,17 +4,21 @@ layout: default.njk
 
 {{ content | safe }}
 
-<ul>
+<ul class="post-cards-list">
   {%- for item in collections['content:' + page.fileSlug + ':' + page.lang] -%}
-    <li>
-      <div>
-        {{ item.data.content | safe }}
-      </div>
-      {% if item.page.url !== false %}
-        <a href="{{ item.page.url }}">{{ item.page.url }}</a>
-      {% endif %}
+    <li class="post-cards-list-item">
+      <article class="post-card">
+        <div class="post-card-image">
+          <img src="/img/placeholder-1280x720.png" alt="placeholder-1280x720.png"/>
+        </div>
+        <div class="post-card-content">
+          <h2 class="post-card-title">{{ item.data.title }}</h2>
+          {{ item.content | safe }}
+          <a href="{{ item.page.url }}" class="post-card-link">{{ item.page.url }}</a>
+        </div>
+      </article>
     </li>
   {%- else -%}
-    <li>{{"no_items" | i18n}}</li>
+    <li>{{ "no_items" | i18n }}</li>
   {%- endfor -%}
 </ul>
