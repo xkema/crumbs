@@ -15,5 +15,5 @@ module.exports = {
       return false;
     }
   },
-  layout: 'default.njk',
+  layout: 'content-detail.njk',
 };
