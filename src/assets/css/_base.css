@@ -1,15 +1,106 @@
-/* 
-  Crumbs Base Styles
-*/
+/* crumbs base styles */
 
-body {
-  background-color: aliceblue;
+:root {
+  --font-family-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  --font-family-heading: Futura, 'Franklin Gothic Medium', 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
+}
 
-  & a {
-    color: brown;
+::selection {
+  background-color: gold;
+  color: rebeccapurple;
+}
+
+html {
+  font-family: var(--font-family-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  margin-bottom: max(1rem, 16px);
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: max(1rem, 16px);
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
-button {
-  background-color: antiquewhite;
+a {
+  &:focus{  
+    outline: 1px dotted currentColor;
+    outline-offset: 0px;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* site header + site content + site footer */
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-heading);
+}
+.site-content {
+  padding: max(2rem, 32px) 0;
+}
+.site-footer {
+  padding: max(1rem, 16px) 0;
+  background-image: linear-gradient(to right, #eee, ghostwhite);
+}
+
+/* main navigation */
+
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: linear-gradient(to right, #ddd, #eee);
+}
+.menu-anchor {
+  display: inline-block;
+  white-space: nowrap;
+  padding: min(2vw, 0.75rem);
+}
+.menu-anchor-active {
+  text-decoration: underline;
+}
+.menu-logo {
+  font-size: clamp(2rem, 4vw, 4rem);
+  display: inline-block;
+  position: relative;
+  padding: max(1rem, 16px) 0;
+}
+
+/* components */
+
+.container {
+  width: min(100% - 10vw, 1024px);
+  margin: auto;
+}
+
+/* other */
+
+.welcome-mat {
+  display: flex;
+  align-items: center;
+  gap: max(1rem, 16px);
+}
+.welcome-mat-image {
+  min-width: 35%;
+}
+.welcome-mat-content {
+  background-image: linear-gradient(to bottom right, darkorchid, rebeccapurple);
+  padding: max(1.5rem, 24px);
+  line-height: 1.5;
+  border: max(0.25rem, 4px) solid lavender;
+  border-radius: max(0.25rem, 4px);
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.05);
+  color: lavender;
+  font-size: clamp(1rem, 4vw, 1.25rem);
 }

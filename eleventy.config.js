@@ -26,6 +26,9 @@ module.exports = function (eleventyConfig) {
   /* plugin: "@grimlink/eleventy-plugin-lucide-icons" */
   eleventyConfig.addPlugin(lucideIcons, {});
 
+  /* static assets */
+  eleventyConfig.addPassthroughCopy({ 'src/assets/img': 'img' });
+
   /* add support for PostCSS */
   eleventyConfig.addTemplateFormats('css');
   eleventyConfig.addExtension('css', {
