@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
-    "start:debug": "DEBUG=Eleventy* eleventy --serve"
+    "start:debug": "DEBUG=Eleventy* eleventy --serve",
+    "build": "eleventy --output=docs",
+    "build:debug": "DEBUG=Eleventy* eleventy --dryrun"
   },
   "keywords": [],
   "author": "Kemal Yılmaz <xkema@tutanota.com> (https://xkema.github.io/)",
