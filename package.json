@@ -7,7 +7,7 @@
   "scripts": {
     "start": "eleventy --serve",
     "start:debug": "DEBUG=Eleventy* eleventy --serve",
-    "build": "eleventy --output=docs",
+    "build": "eleventy --output=docs --pathprefix=crumbs",
     "build:debug": "DEBUG=Eleventy* eleventy --dryrun"
   },
   "keywords": [],

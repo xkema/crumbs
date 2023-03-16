@@ -14,6 +14,8 @@ const lucideIcons = require('@grimlink/eleventy-plugin-lucide-icons');
 const i18n = require('eleventy-plugin-i18n');
 const translations = require('./src/assets/i18n/translations.js');
 
+const { EleventyHtmlBasePlugin } = require('@11ty/eleventy');
+
 module.exports = function (eleventyConfig) {
 
   /* plugin: "@11ty/eleventy-plugin-directory-output" */
@@ -36,6 +38,9 @@ module.exports = function (eleventyConfig) {
   
   /* plugin: "@grimlink/eleventy-plugin-lucide-icons" */
   eleventyConfig.addPlugin(lucideIcons, {});
+  
+  /* plugin: "EleventyHtmlBasePlugin" */
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
   /* static assets */
   eleventyConfig.addPassthroughCopy({ 'src/assets/img': 'img' });
